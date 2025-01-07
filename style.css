@@ -178,11 +178,15 @@
   fill: white;
 }
 
+
+
+
+
 .btn-deposit {
   background-color: #0078d0;
   border: 0;
   border-radius: 56px;
-  color: #fff;
+  color: #52fc03;
   cursor: pointer;
   display: inline-block;
   font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu,
@@ -197,6 +201,8 @@
   transition: all 0.3s;
   touch-action: manipulation;
   margin: 30px;
+  scale: 1.14em;
+  width:200px  ;
 }
 
 .btn-deposit:before {
@@ -219,33 +225,11 @@
   transform: scale(1.05);
 }
 
-@media (min-width: 768px) {
-  .btn-deposit {
-    padding: 16px 48px;
-  }
-}
+
+
 
 .btn-withdaw {
-  background-color: #0078d0;
-  border: 0;
-  border-radius: 56px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu,
-    "Helvetica Neue", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  outline: 0;
-  padding: 16px 21px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s;
-  touch-action: manipulation;
-}
-.btn-withdaw {
-  color: #fff;
+  color: #610303;
   padding: 15px 25px;
   border-radius: 100px;
   background-color: #4c43cd;
@@ -267,7 +251,10 @@
   touch-action: manipulation;
   cursor: pointer;
   margin: 30px;
-  scale: 1.15;
+    transition: all 0.3s;
+    width:200px ;
+    scale: 1.14em;
+    padding: 20px;
 }
 
 .btn-withdaw:hover {
