@@ -13,48 +13,69 @@ const Display = (displayId, amount) => {
   id_display.innerText = amount; // Update the innerText with the amount passed
 };
 
+// Load data from local storage
+function loadDataFromLocalStorage() {
+  const storedDepositAmount = localStorage.getItem("depositAmount");
+  const storedWithdrawAmount = localStorage.getItem("withdrawAmount");
+  const storedBalanceAmount = localStorage.getItem("balanceAmount");
+
+  if (storedDepositAmount && storedWithdrawAmount && storedBalanceAmount) {
+    depositAmount = parseFloat(storedDepositAmount);
+    withdrawAmount = parseFloat(storedWithdrawAmount);
+    balanceAmount = parseFloat(storedBalanceAmount);
+
+    // Update the display with the loaded values
+    Display("displayDiposit", depositAmount);
+    Display("displayWithdraw", withdrawAmount);
+    Display("displayAmount", balanceAmount);
+  }
+}
+
 // Handle Deposit
 function HandleDeposit() {
   const inputedValue = getId("input"); // Get the input element
   const value = inputedValue ? parseFloat(inputedValue.value) : 0; // Parse the value as a float
 
-  // Check if the value is a valid number and greater than 0
+  
   if (isNaN(value) || value <= 0) {
-    alert("Please enter a valid positive amount for deposit!");
+    alert("Amount of Deposited Money Can not be Negative or Zero!");
     return;
   }
+  depositAmount += value; 
+  balanceAmount += value; 
 
-  depositAmount += value; // Update deposit amount
-  balanceAmount += value; // Update the initial balance
-
-  // Display the updated amounts
+ 
   Display("displayDiposit", depositAmount);
   Display("displayAmount", balanceAmount);
-  inputedValue.value = ""; // Clear input field
+  inputedValue.value = ""; 
 
-  console.log("Deposited: ", value); // Log the deposited value
+ 
+  localStorage.setItem("depositAmount", depositAmount);
+  localStorage.setItem("balanceAmount", balanceAmount);
+
+
 }
 
-// Handle Withdraw
+
 function HandleWithdraw() {
-  const inputedValue = getId("input"); // Get the input element
+  const inputedValue = getId("input"); 
   const value = inputedValue ? parseFloat(inputedValue.value) : 0;
 
-  // Check if the value is a valid number and greater than 0
+ 
   if (isNaN(value) || value <= 0) {
-    alert("Please enter a valid positive amount for withdrawal!");
+    alert("Amount of Withdrawn Money Can not be Negative or Zero!");
     return;
   }
 
   if (balanceAmount <= 0) {
-    alert("Insufficient funds!");
+    alert("Please Deposit Money First to Your Wallet");
     return;
   }
 
+
   // Check if the withdrawal amount is less than or equal to the balance
   if (value > balanceAmount) {
-    alert("Insufficient funds for the withdrawal!");
-     
+    alert("You don't have enough money in your Wallet to Withdraw.");
     return;
   }
 
@@ -66,5 +87,13 @@ function HandleWithdraw() {
   Display("displayAmount", balanceAmount);
   inputedValue.value = ""; // Clear input field
 
-  console.log("Withdrawn: ", value); // Log the withdrawn value
+  // Save updated values in local storage
+  localStorage.setItem("withdrawAmount", withdrawAmount);
+  localStorage.setItem("balanceAmount", balanceAmount);
+  alert("You have successfully withdrawn " + value + " from your Wallet.");
+
+  // Log the withdrawn value
 }
+
+// Initial load
+loadDataFromLocalStorage();
