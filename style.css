@@ -33,10 +33,10 @@
 }
 
 .balance {
-  font-family: "Manrope", sans-serif;
-  font-size: 24px;
+  font-family: Roboto;
+  font-size: 30px;
   letter-spacing: 1.5px;
-  color: #228b22;
+  color: #080808;
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: left;
@@ -51,17 +51,17 @@
 }
 
 .dep-am {
-  color: rgb(128, 36, 0);
+  color: white;
   margin-left: 30px;
 }
 
 .wid-am {
-  color: rgb(128, 36, 0);
+  color: white;
   margin-left: 30px;
 }
 
 .am-ac {
-  color: rgb(128, 36, 0);
+  color: white;
   margin-left: 30px;
 }
 
