@@ -12,32 +12,24 @@
         <h1 class="header-text">Welcome to Bangladesh Bank</h1>
         <div class="header-div">
           <h2 class="balance">
-            Total Deposited Amount: <span class="dep-am"> </span> 0
+            Total Deposited Amount: <span id="displayDiposit" class="dep-am"> 0 </span> 
           </h2>
           <h2 class="balance">
-            Total Withdrawal Amount: <span class="wid-am"> </span> 0
+            Total Withdrawal Amount: <span id="displayWithdraw" class="wid-am"> 0 </span> 
           </h2>
           <h2 class="balance">
-            Amount in Account : <span class="am-ac"> </span> 0
+            Amount in Account : <span id="displayAmount" class="am-ac"> 0 </span>
           </h2>
         </div>
         <div class="input-div">
-          <!-- <input
-            class="input"
-            type="number"
-            name=""
-            id=""
-            max="10000"
-            min="0"
-            placeholder="Enter Amount" search__icon
-          /> -->
+          
           <div class="input-container">
             <div class="search-container">
               <input
                 class="input"
                 type="number"
                 name=""
-                id=""
+                id="input"
                 max="10000"
                 min="0"
                 placeholder="Enter Amount"
@@ -53,8 +45,8 @@
           </div>
 
           <div class="btn-div">
-            <button class="btn-deposit" onclick="deposit()">Deposit</button>
-            <button class="btn-withdaw" onclick="withdraw()">Withdraw</button>
+            <button class="btn-deposit" onclick="HandleDeposit()">Deposit</button>
+            <button class="btn-withdaw" onclick="HandleWithdraw()">Withdraw</button>
           </div>
         </div>
       </div>
