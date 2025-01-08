@@ -2,18 +2,18 @@ let depositAmount = 0;
 let withdrawAmount = 0;
 let balanceAmount = 0;
 
-// Function to get an element by ID
+
 const getId = id => {
   return document.getElementById(id);
 };
 
-// Function to update the display
+
 const Display = (displayId, amount) => {
   const id_display = getId(displayId);
-  id_display.innerText = amount; // Update the innerText with the amount passed
+  id_display.innerText = amount; 
 };
 
-// Load data from local storage
+
 function loadDataFromLocalStorage() {
   const storedDepositAmount = localStorage.getItem("depositAmount");
   const storedWithdrawAmount = localStorage.getItem("withdrawAmount");
@@ -24,17 +24,17 @@ function loadDataFromLocalStorage() {
     withdrawAmount = parseFloat(storedWithdrawAmount);
     balanceAmount = parseFloat(storedBalanceAmount);
 
-    // Update the display with the loaded values
+    
     Display("displayDiposit", depositAmount);
     Display("displayWithdraw", withdrawAmount);
     Display("displayAmount", balanceAmount);
   }
 }
 
-// Handle Deposit
+
 function HandleDeposit() {
-  const inputedValue = getId("input"); // Get the input element
-  const value = inputedValue ? parseFloat(inputedValue.value) : 0; // Parse the value as a float
+  const inputedValue = getId("input"); 
+  const value = inputedValue ? parseFloat(inputedValue.value) : 0;
 
   
   if (isNaN(value) || value <= 0) {
@@ -73,27 +73,26 @@ function HandleWithdraw() {
   }
 
 
-  // Check if the withdrawal amount is less than or equal to the balance
+ 
   if (value > balanceAmount) {
     alert("You don't have enough money in your Wallet to Withdraw.");
     return;
   }
 
-  withdrawAmount += value; // Update withdraw amount
-  balanceAmount -= value; // Update the balance
+  withdrawAmount += value; 
+  balanceAmount -= value; 
 
-  // Display the updated amounts
+
   Display("displayWithdraw", withdrawAmount);
   Display("displayAmount", balanceAmount);
-  inputedValue.value = ""; // Clear input field
+  inputedValue.value = ""; 
 
-  // Save updated values in local storage
+
   localStorage.setItem("withdrawAmount", withdrawAmount);
   localStorage.setItem("balanceAmount", balanceAmount);
   alert("You have successfully withdrawn " + value + " from your Wallet.");
 
-  // Log the withdrawn value
+
 }
 
-// Initial load
 loadDataFromLocalStorage();
