@@ -240,3 +240,36 @@
     rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
   transform: scale(1.05);
 }
+
+
+/* Footer Styling */
+.footer {
+  background-color: #333; /* Dark background color */
+  color: white; /* White text */
+  text-align: center; /* Center the text */
+  padding: 20px 0; /* Add padding for space around the text */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Set font */
+}
+
+.footer p {
+  margin: 5px 0; /* Adds spacing between the text lines */
+  font-size: 14px; /* Set font size for the footer text */
+}
+
+.footer .footer-content {
+  max-width: 1200px; /* Limit width for large screens */
+  margin: 0 auto; /* Center align the footer content */
+}
+
+.footer a {
+  color: #8ab6d6; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
