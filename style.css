@@ -25,9 +25,10 @@
 }
 .header-text {
   font-family: Roboto;
-  font-size: 48px;
+  font-size: 72px;
   letter-spacing: 1.5px;
   margin: 30px 20px 10px;
+  color: antiquewhite;
 }
 
 .balance {
