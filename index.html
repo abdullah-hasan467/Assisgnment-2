@@ -9,20 +9,22 @@
   <body>
     <div class="container">
       <div class="main-box">
-        <h1 class="header-text">Welcome to Bangladesh Bank</h1>
+        <h1 class="header-text">Internet Banking of Sherpur Bank</h1>
         <div class="header-div">
           <h2 class="balance">
-            Total Deposited Amount: <span id="displayDiposit" class="dep-am"> 0 </span> 
+            Total Deposited Amount:
+            <span id="displayDiposit" class="dep-am"> 0 </span> <span>৳</span>
           </h2>
           <h2 class="balance">
-            Total Withdrawal Amount: <span id="displayWithdraw" class="wid-am"> 0 </span> 
+            Total Withdrawal Amount:
+            <span id="displayWithdraw" class="wid-am"> 0 </span> <span>৳</span>
           </h2>
           <h2 class="balance">
-            Amount in Account : <span id="displayAmount" class="am-ac"> 0 </span>
+            Amount in Account :
+            <span id="displayAmount" class="am-ac"> 0 </span> <span>৳</span>
           </h2>
         </div>
         <div class="input-div">
-          
           <div class="input-container">
             <div class="search-container">
               <input
@@ -45,12 +47,17 @@
           </div>
 
           <div class="btn-div">
-            <button class="btn-deposit" onclick="HandleDeposit()">Deposit</button>
-            <button class="btn-withdaw" onclick="HandleWithdraw()">Withdraw</button>
+            <button class="btn-deposit" onclick="HandleDeposit()">
+              Deposit
+            </button>
+            <button class="btn-withdaw" onclick="HandleWithdraw()">
+              Withdraw
+            </button>
           </div>
         </div>
       </div>
     </div>
+    
   </body>
   <script src="./script.js"></script>
 </html>
